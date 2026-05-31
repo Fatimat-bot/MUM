@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonne Fête des Mères, Ma vie 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mum_style.css">
+</head>
+<body>
+
+<!-- ÉCRAN D'ACCUEIL -->
+<div id="splash-screen" onclick="enterSite()">
+  <div class="splash-blobs">
+    <div class="splash-blob sb1"></div>
+    <div class="splash-blob sb2"></div>
+    <div class="splash-blob sb3"></div>
+  </div>
+  <div class="splash-flowers">
+    <span>🌸</span><span>🌺</span><span>🌼</span><span>🌷</span><span>🌸</span>
+  </div>
+  <div class="splash-content">
+    <div class="splash-tag">💕 Un message spécial t'attend 💕</div>
+    <h1 class="splash-title">Pour toi,<br><em>Ma vie</em></h1>
+    <p class="splash-sub">Dimanche 31 mai 2026</p>
+    <div class="splash-btn">
+      <span class="splash-btn-icon">💌</span>
+      <span>Cliquez pour entrer</span>
+    </div>
+    <p class="splash-hint">Avec son 🔊</p>
+  </div>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="flowers">
+    <span>🌸</span><span>🌺</span><span>🌼</span><span>🌷</span><span>🌸</span>
+  </div>
+  <div class="hero-tag">✨ Bonne Fête des Mères 2026 ✨</div>
+  <h1>Pour toi, <em>Ma vie</em> 💕</h1>
+  <p class="hero-date">Dimanche 31 mai 2026</p>
+</section>
+
+<!-- ENVELOPPE -->
+<section class="letter-section">
+  <div class="envelope-scene">
+    <p class="envelope-hint">Clique sur l'enveloppe pour lire notre message 💌</p>
+
+    <!-- L'enveloppe cliquable -->
+    <div class="envelope-wrap" id="envelopeWrap" onclick="openEnvelope()">
+      <div class="env-body">
+        <div class="env-flap" id="envFlap"></div>
+        <div class="env-tri-left"></div>
+        <div class="env-tri-right"></div>
+        <div class="env-heart-icon" id="envHeart">💌</div>
+      </div>
+      <span class="envelope-label">Cliquez pour ouvrir</span>
+    </div>
+
+    <!-- La lettre qui s'affiche après -->
+    <div class="letter-card" id="letterCard">
+      <div class="letter-opener">Notre message du cœur...</div>
+      <p class="letter-body">
+        Maman, en ce jour spécial de la fête des mères, nous tes enfants te souhaitons une <span class="letter-highlight">bonne fête des mères.</span><br><br>
+        Maman tu sais, tu es plus qu'une mère pour nous — tu es notre amie, notre confidente, notre source d'inspiration, notre épine dorsale, notre pilier.<br><br>
+        Nous remercions <span class="letter-highlight">ALLAH</span> de t'avoir choisie parmi toutes les femmes pour être notre mère. Nous lui en sommes très très reconnaissants.<br><br>
+        Passe une très bonne fête des mères. <span class="letter-highlight">Nous t'aimons abondamment.</span>
+      </p>
+      <div class="letter-sign">— Tes enfants qui t'aiment pour toujours 💝</div>
+      <div class="letter-deco">🌸 🤍 🌸</div>
+      <button class="close-letter-btn" onclick="closeEnvelope()">✕ Refermer</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITÉS -->
+<section class="qualities">
+  <div class="section-header">
+    <h2>Ce que tu es pour nous</h2>
+    <p>Tu portes tous ces rôles avec amour et grâce</p>
+  </div>
+  <div class="q-grid">
+    <div class="q-card"><div class="q-emoji">👭</div><div class="q-label">Notre amie</div><div class="q-desc">Toujours là pour écouter sans juger</div></div>
+    <div class="q-card"><div class="q-emoji">🤫</div><div class="q-label">Notre confidente</div><div class="q-desc">Nos secrets sont en sécurité avec toi</div></div>
+    <div class="q-card"><div class="q-emoji">✨</div><div class="q-label">Notre inspiration</div><div class="q-desc">Tu nous montres la voie chaque jour</div></div>
+    <div class="q-card"><div class="q-emoji">🦴</div><div class="q-label">Notre épine dorsale</div><div class="q-desc">Tu nous portes dans les moments durs</div></div>
+    <div class="q-card"><div class="q-emoji">🏛️</div><div class="q-label">Notre pilier</div><div class="q-desc">Sans toi, rien ne tient debout</div></div>
+    <div class="q-card"><div class="q-emoji">💖</div><div class="q-label">Notre tout</div><div class="q-desc">Tu es le centre de notre monde</div></div>
+  </div>
+</section>
+
+<!-- PHOTOS & VIDÉOS -->
+<section class="photos-section">
+  <div class="section-header">
+    <h2>Nos souvenirs ensemble 📸🎬</h2>
+    <p>Clique sur un cadre pour découvrir un message 💌</p>
+  </div>
+  <div class="photos-grid">
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <video controls onclick="event.stopPropagation()">
+            <source src="Video2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="flip-back">
+          <div class="flip-emoji">🌸</div>
+          <div class="flip-msg">Tu es la plus belle maman du monde. On t'aime infiniment !</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="Photo1.jpg" alt="Souvenir 2">
+        </div>
+        <div class="flip-back">
+          <div class="flip-emoji">💝</div>
+          <div class="flip-msg">Merci d'être notre lumière chaque jour, Maman !</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="Photo2.jpg" alt="Souvenir 3">
+        </div>
+        <div class="flip-back">
+          <div class="flip-emoji">🤲</div>
+          <div class="flip-msg">Qu'ALLAH te protège et te comble de bonheur. Aameen 💖</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="Photo3.jpg" alt="Souvenir 4">
+        </div>
+        <div class="flip-back">
+          <div class="flip-emoji">🌺</div>
+          <div class="flip-msg">Tu es notre force, notre ancre, notre tout !</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="Photo4.jpg" alt="Souvenir 5">
+        </div>
+        <div class="flip-back">
+          <div class="flip-emoji">✨</div>
+          <div class="flip-msg">Ton sourire est notre plus belle récompense. On t'aime !</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <video controls onclick="event.stopPropagation()">
+            <source src="Video3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="flip-back">
+          <div class="flip-emoji">💕</div>
+          <div class="flip-msg">Bonne fête des mères Ma vie ! Tu mérites tout le bonheur du monde 🌍</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="section-header">
+    <h2>Des moments qui comptent</h2>
+    <p>Quelques raisons parmi mille de t'aimer</p>
+  </div>
+  <div class="tl-list">
+    <div class="tl-item">
+      <div class="tl-dot">🌅</div>
+      <div>
+        <div class="tl-year">Chaque matin</div>
+        <div class="tl-text">Tu te lèves avant tout le monde pour que nous n'ayons manqué de rien.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🤲</div>
+      <div>
+        <div class="tl-year">Dans les épreuves</div>
+        <div class="tl-text">Tes prières pour nous montent vers le ciel chaque nuit, on le sait.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">😊</div>
+      <div>
+        <div class="tl-year">Dans la joie</div>
+        <div class="tl-text">Ton sourire est notre plus belle récompense, notre plus grande fierté.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">♾️</div>
+      <div>
+        <div class="tl-year">Pour toujours</div>
+        <div class="tl-text">Qu'ALLAH te garde, te protège et te comble de Ses bienfaits. Aameen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COEUR SURPRISE -->
+<section class="heart-section">
+  <p class="heart-hint">Clique sur le cœur pour une surprise 💝</p>
+  <div class="big-heart" onclick="openVideoSurprise()">❤️</div>
+</section>
+
+<!-- MODAL COEUR VIDÉO -->
+<div class="heart-modal" id="heartModal" onclick="closeVideoSurprise()">
+  <canvas id="floatingCanvas"></canvas>
+  <div class="heart-video-container" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeVideoSurprise()">✕</button>
+    <video id="surpriseVideo" controls onclick="event.stopPropagation()">
+      <source src="Video1.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+<!-- VOEU FINAL -->
+<section class="wish">
+  <h2>Bonne fête des mères, Ma vie ! 🌸</h2>
+  <div class="wish-hearts">💕 💝 💕</div>
+  <p>Que ce jour soit aussi lumineux que tu l'es pour nous chaque jour.</p>
+  <button class="confetti-btn" onclick="launchConfetti()">🎉 Lancer les confettis !</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-main">Tes enfants qui t'aiment abondamment, PROSPERITE ET MERAJA💖</div>
+  <div class="f-sub">Fait avec amour pour la meilleure des mamans</div>
+</footer>
+
+
+<!-- MUSIQUE DE FOND MP3 -->
+<audio id="bg-audio" loop preload="auto">
+  <source src="Audio1.mp4" type="audio/mpeg">
+</audio>
+
+<!-- Bouton contrôle musique -->
+<div id="music-btn" onclick="toggleMusic()" title="Musique">
+  <span id="music-icon">🔊</span>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Gère le clic sur la carte : retourne seulement si un média est chargé
+  function handleCardClick(e, cardId) {
+    const front = document.querySelector('#' + cardId + ' .flip-front');
+    const hasMedia = front.querySelector('img, video');
+    if (hasMedia) {
+      document.getElementById(cardId).classList.toggle('flipped');
+    }
+    // Si pas de média, le clic ouvre l'input file (comportement natif)
+  }
+</script>
+</body>
+</html>
